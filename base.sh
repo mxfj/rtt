@@ -8,8 +8,7 @@ function baseyum-install() {
 }
 
 function baseservice-start() {
-	git clone https://github.com/mxfj/rtt.git
-	mv rtt/rtt.sh /opt/
+	mv /opt/rtt/rtt.sh /opt/
 	chmod +x /opt/rtt.sh
 	######站点部署##############
 	# 启动服务
