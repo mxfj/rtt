@@ -35,6 +35,8 @@ function baseservice-start() {
 	echo "*/10 * * * * root (sh -x /opt/rtt.sh 2>&1 > /dev/null)" >> /etc/crontab
 	# 执行计划任务（保障网页服务不卡死，12小时重启一次httpd服务）
 	echo "* 12 * * * root (service httpd restart)" >> /etc/crontab
+	# 执行计划任务（删除wireshark临时文件）	
+	echo "* 12 * * * root (rm -rf /tmp/wireshark_eth0*)" >> /etc/crontab
 }
 
 function uninstall() {
