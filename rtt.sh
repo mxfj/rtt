@@ -1,10 +1,4 @@
 #!/bin/bash
-if [ -d /data/rtt ];then
-date +%s >>/data/rtt/time
-else
-mkdir -p /data/rtt/
-date +%s >>/data/rtt/time
-fi
 if  { ps auxwww|grep tshar[k] >/dev/null; } ; then
         echo exit
         exit
