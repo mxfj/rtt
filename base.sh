@@ -40,7 +40,7 @@ function baseservice-start() {
 }
 
 function uninstall() {
-	yum erase -y wireshark  tcpdump telnet httpd php wget ncurses-devel python-devel vim ntp
+	yum erase -y wireshark  tcpdump telnet httpd php wget ncurses-devel python-devel vim ntp lrzsz
 	yum -y  groupremove 'Development tools'
 }
 
