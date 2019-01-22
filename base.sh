@@ -26,7 +26,8 @@ function baseservice-start() {
 	# 关闭防火墙
 	service iptables stop
 	# 网站测试图片下载
-	curl -L http://www.onemt.com/static/images/game_2.jpg -o /var/www/html/logo.png
+	# curl -L http://www.onemt.com/static/images/game_2.jpg -o /var/www/html/logo.png
+	curl -L https://www.google.com.hk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png -o /var/www/html/logo.png
 	######调整计划任务和时区、时间同步#####
 	echo "0 * * * * root (/usr/sbin/ntpdate ntp1.aliyun.com; /sbin/hwclock --systohc)" >> /etc/crontab
 	#####海外服务器开启这个
