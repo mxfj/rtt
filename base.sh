@@ -3,7 +3,7 @@
 IPADD=`ifconfig |grep 'Ethernet  HWaddr' -A3|grep 'inet add'|awk -F: '{print $2}'|awk '{print $1}'|egrep -v "^10|^192.168|^172.1|^172.2|^172.2|^172.30|^172.31|^127.0.0.1"`
 ########安装基础包###########
 function baseyum-install() {
-	yum  install -y wireshark  tcpdump telnet httpd php wget ncurses-devel python-devel vim ntp
+	yum  install -y wireshark  tcpdump telnet httpd php wget ncurses-devel python-devel vim ntp lrzsz
 	yum -y groupinstall 'Development tools'
 }
 
