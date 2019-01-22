@@ -33,10 +33,10 @@ function baseservice-start() {
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime -r
 	# 执行计划任务（自动抓包，10分钟重启一次抓包软件wireshark）
 	echo "*/10 * * * * root (sh -x /opt/rtt.sh 2>&1 > /dev/null)" >> /etc/crontab
+       # 执行计划任务（保障磁盘空间每30分钟删除一次wireshark抓包文件-删除wireshark临时文件）
+	echo "*/30 * * * * root (rm -rf /tmp/wireshark_eth0*)" >> /etc/crontab
 	# 执行计划任务（保障网页服务不卡死，12小时重启一次httpd服务）
 	echo "* 12 * * * root (service httpd restart)" >> /etc/crontab
-	# 执行计划任务（删除wireshark临时文件）	
-	echo "* 12 * * * root (rm -rf /tmp/wireshark_eth0*)" >> /etc/crontab
 }
 
 function uninstall() {
