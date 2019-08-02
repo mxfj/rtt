@@ -29,7 +29,7 @@ function baseservice-start() {
 	# curl -L http://www.onemt.com/static/images/game_2.jpg -o /var/www/html/logo.png
 	curl -L https://www.google.com.hk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png -o /var/www/html/logo.png
 	######调整计划任务和时区、时间同步#####
-	echo "0 * * * * root (/usr/sbin/ntpdate ntp1.aliyun.com; /sbin/hwclock --systohc)" >> /etc/crontab
+	echo "0 * * * * root /usr/sbin/ntpdate ntp1.aliyun.com; /sbin/hwclock --systohc" >> /etc/crontab
 	#####海外服务器开启这个
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime -r
 	# 执行计划任务（自动抓包，10分钟重启一次抓包软件wireshark）
