@@ -10,6 +10,8 @@ function baseyum-install() {
 function baseservice-start() {
 	mv /opt/rtt/rtt.sh /opt/
 	chmod +x /opt/rtt.sh
+	######解决因selinux问题导致出现403下载错误的解决BUG####
+	chcon -R -t httpd_sys_content_t /var/www/html
 	######站点部署##############
 	# 启动服务
 	service httpd start
